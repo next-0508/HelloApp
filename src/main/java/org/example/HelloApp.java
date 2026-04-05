@@ -11,17 +11,17 @@ public class HelloApp {
             return;
         }
 
-        // Build greeting using enhanced for-loop
-        StringBuilder names = new StringBuilder();
+        String names = "";
 
+        // Enhanced for-loop to build string
         for (String name : args) {
-            names.append(name).append(", ");
+            names += name + ", ";
         }
 
-        // Remove trailing comma and space
-        names.setLength(names.length() - 2);
+        // Remove trailing ", " using substring
+        names = names.substring(0, names.length() - 2);
 
-        // Print final greeting
+        // Print greeting
         System.out.println("Hello, " + names + "!");
     }
 }
