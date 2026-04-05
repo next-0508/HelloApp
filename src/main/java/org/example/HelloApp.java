@@ -5,28 +5,23 @@ package org.example;
 public class HelloApp {
     public static void main(String[] args) {
 
-        // If no arguments, print default greeting
+        // Default case: no arguments
         if (args.length == 0) {
             System.out.println("Hello, World!");
             return;
         }
 
-        // Use StringBuilder to build the names string
-        StringBuilder nameBuilder = new StringBuilder();
+        // Build greeting using enhanced for-loop
+        StringBuilder names = new StringBuilder();
 
-        // Enhanced for-loop
         for (String name : args) {
-            nameBuilder.append(name).append(", ");
+            names.append(name).append(", ");
         }
 
-        // Remove last comma and space
-        nameBuilder.setLength(nameBuilder.length() - 2);
+        // Remove trailing comma and space
+        names.setLength(names.length() - 2);
 
-        // Print greeting
-        System.out.println("Hello, " + nameBuilder + "!");
-    }
-
-        // Print greeting
-        System.out.println("Hello, " + name + "!");
+        // Print final greeting
+        System.out.println("Hello, " + names + "!");
     }
 }
