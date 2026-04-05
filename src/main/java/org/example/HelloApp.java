@@ -5,10 +5,31 @@ package org.example;
 public class HelloApp {
     public static void main(String[] args) {
 
-        String name = "World";
-        if (args.length >0){
-            name= args[0];;
+        String name;
+
+        // Check if any arguments are passed
+        if (args.length > 0) {
+
+            // Use StringBuilder to combine names
+            StringBuilder nameBuilder = new StringBuilder();
+
+            for (int i = 0; i < args.length; i++) {
+                nameBuilder.append(args[i]);
+
+                // Add comma and space except for last element
+                if (i < args.length - 1) {
+                    nameBuilder.append(", ");
+                }
+            }
+
+            name = nameBuilder.toString();
+
+        } else {
+            // Default value
+            name = "World";
         }
+
+        // Print greeting
         System.out.println("Hello, " + name + "!");
     }
 }
